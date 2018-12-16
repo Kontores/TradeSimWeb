@@ -10,8 +10,7 @@ var controller = {
                 data: currentLang,
                 pageTitle: currentLang.home.title,
                 imageSource: "images/main.jpg"
-            }); 
-            console.log("main get requested");        
+            });  
     },
 
     getContacts: function(request, response) {
@@ -20,7 +19,6 @@ var controller = {
             data: currentLang,
             imageSource: "/images/tradesim.jpg"
         });
-        console.log("contacts page get requested");
     },
 
     getContactsSuccess: function(request, response) {
@@ -34,7 +32,6 @@ var controller = {
     postContacts: function(request, response) {
         if(!request.body)
             return;
-        console.log(request.body);
         mailService.sendMail(request.body.username, request.body.email, request.body.message);
         response.redirect("/contacts-success");
     },
@@ -45,18 +42,15 @@ var controller = {
             data: currentLang,
             imageSource: "/images/tradesim.jpg"
         });
-        console.log("simulator page get requested");
     },
 
     getRus: function(request, response) {
         currentLang = languages.ru;
         controller.getMain(request, response);
-        console.log("language set to Russian");
     },
     getEn: function(request, response) {
         currentLang = languages.en;
         controller.getMain(request, response);
-        console.log("language set to English");
     },
 
     getAbout: function(request, response) {
