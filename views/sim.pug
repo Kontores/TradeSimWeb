@@ -1,0 +1,222 @@
+
+extends layout.pug
+
+block content
+    div(id="terminal")
+        div(class="chart-cover")
+            div(id="chart-label")
+            canvas(id="chart" width="1048" height="500")
+        div(class="sidebar")
+            div(class="panel")
+                h3   #{data.tradeSim.performance}
+                div(class="panel-black")
+                    p   #{data.tradeSim.netProfit}: 
+                        span(id="net-profit" class="performance-label") 
+                    p   #{data.tradeSim.position}: 
+                        span(id="position" class="performance-label")
+                    p   #{data.tradeSim.varMargin}: 
+                        span(id="var-margin" class="performance-label") 
+                    p   #{data.tradeSim.totalTrades}: 
+                        span(id="total-trades" class="performance-label")
+                    p   #{data.tradeSim.winningTrades}: 
+                        span(id="win-trades" class="performance-label")
+                    p   #{data.tradeSim.profitFactor}: 
+                        span(id="profit-factor" class="perfrormance-label")
+            div(class="adwver")
+        div(class="panel")
+            h3 #{data.tradeSim.data}
+            button(class="button-white") #{data.tradeSim.selectFile}
+                input(type="file", label="Select" id="selectFile")
+            button(class="button-white" onclick="terminal.start(document.getElementById('selectFile'))") #{data.tradeSim.load} 
+            span #{data.tradeSim.or}
+            button(class="button-white" onclick="terminal.start(null, true)") #{data.tradeSim.useRandom}
+            table
+                tr
+                    td #{data.tradeSim.separator}: 
+                    td
+                        input(id="separator" type="text" value=",")
+                tr 
+                    td #{data.tradeSim.decSeparator}:
+                    td 
+                        input(id="decSeparator" type="text" value=".")
+            h3 #{data.tradeSim.dataPos}:
+            table
+                tr
+                    td #{data.tradeSim.date}
+                    td  
+                        select( id="datePos" name="date") 
+                            option(value="0" selected) 1
+                            option(value="1") 2
+                            option(value="2") 3
+                            option(value="3") 4
+                            option(value="4") 5
+                            option(value="5") 6
+                            option(value="6") 7
+                            option(value="7") 8
+                    td #{data.tradeSim.time}
+                    td 
+                        select(id="timePos" name="time") 
+                            option(value="-1") -
+                            option(value="0") 1
+                            option(value="1" selected) 2
+                            option(value="2") 3
+                            option(value="3") 4
+                            option(value="4") 5
+                            option(value="5") 6
+                            option(value="6") 7
+                            option(value="7") 8
+                    td #{data.tradeSim.open}
+                    td 
+                        select(id="openPos" name="date") 
+                            option(value="0") 1
+                            option(value="1") 2
+                            option(value="2" selected) 3
+                            option(value="3") 4
+                            option(value="4") 5
+                            option(value="5") 6
+                            option(value="6") 7
+                            option(value="7") 8
+                tr
+                    td #{data.tradeSim.high}
+                    td
+                        select(id="highPos" name="high") 
+                            option(value="0") 1
+                            option(value="1") 2
+                            option(value="2") 3
+                            option(value="3" selected) 4
+                            option(value="4") 5
+                            option(value="5") 6
+                            option(value="6") 7
+                            option(value="7") 8
+                    td #{data.tradeSim.low}
+                    td
+                        select(id="lowPos" name="low") 
+                            option(value="0") 1
+                            option(value="1") 2
+                            option(value="2") 3
+                            option(value="3") 4
+                            option(value="4" selected) 5
+                            option(value="5") 6
+                            option(value="6") 7
+                            option(value="7") 8
+                    td #{data.tradeSim.close}
+                    td
+                        select(id="closePos" name="close") 
+                            option(value="0") 1
+                            option(value="1") 2
+                            option(value="2") 3
+                            option(value="3") 4
+                            option(value="4") 5
+                            option(value="5" selected) 6
+                            option(value="6") 7
+                            option(value="7") 8
+                tr
+                    td #{data.tradeSim.volume}
+                    td
+                        select(id="volumePos" name="volume")
+                            option(value="-1") - 
+                            option(value="0") 1
+                            option(value="1") 2
+                            option(value="2") 3
+                            option(value="3") 4
+                            option(value="4") 5
+                            option(value="5") 6
+                            option(value="6" selected) 7
+                            option(value="7") 8
+            
+        div(class="panel" id="panel-chart")
+            h3 #{data.tradeSim.chart}
+            button(class="button-blue" onclick="terminal.switchNext()") #{data.tradeSim.next} 
+            button(class="button-blue" onclick="terminal.zoomIn()") +
+            button(class="button-blue" onclick="terminal.zoomOut()") -
+            br
+            h3 #{data.tradeSim.autoscroll}
+            label(class="switch")
+                input(type="checkbox" onclick="terminal.setAutoScroll()")
+                span(class="slider")
+            
+            label(for="scrlInterval") #{data.tradeSim.scrollSpeed}
+            input(id="scrlInterval" type="range" min="1" max="995" step="1" oninput="terminal.setScrlSpeed(document.getElementById('scrlInterval').value)")
+
+        div(class="panel" id="panel-trading")
+            h3 #{data.tradeSim.trading}
+            button(class="button-green" onclick="terminal.buy()") #{data.tradeSim.buy}
+            input(id="pending-entry" type="number" placeholder="By Market")
+            button(class="button-red" onclick="terminal.sell()") #{data.tradeSim.sell}
+            br
+            button(class="button-blue" id="cancel-order" onclick="terminal.clearOrder('pending-entry')") #{data.tradeSim.cancel}
+            button(class="button-blue" onclick="terminal.clearOrder('stop-loss')") #{data.tradeSim.clear}
+            input(id="stop-loss" type="number" placeholder="Stop Loss") 
+            button(class="button-white" onclick="terminal.setStop(document.getElementById('stop-loss').value)") #{data.tradeSim.set}
+            br
+            button(class="button-blue" onclick="terminal.clearOrder('take-profit')") #{data.tradeSim.clear}
+            input(id="take-profit" type="number" placeholder="Take Profit") 
+            button(class="button-white" onclick="terminal.setLimit(document.getElementById('take-profit').value)") #{data.tradeSim.set} 
+    div(id="trade-results")
+        div(class="adhor")
+        h2 #{data.tradeSim.results}
+        canvas(id="equity-chart" width="800" height="400")
+        h3 #{data.tradeSim.performance}
+        table(class="performance")
+            tr
+                td #{data.tradeSim.grossProfit}
+                td(id="stat-gross-profit")
+            tr
+                td #{data.tradeSim.grossLoss}
+                td(id="stat-gross-loss")
+            tr
+                td #{data.tradeSim.netProfit}
+                td(id="stat-net-profit")
+            tr
+                td #{data.tradeSim.drawdown}
+                td(id="stat-drawdown")
+            tr
+                td #{data.tradeSim.totalTrades}
+                td(id="stat-total-trades")
+            tr
+                td #{data.tradeSim.winningTrades}
+                td(id="stat-winning-trades")
+            tr
+                td #{data.tradeSim.losingTrades}
+                td(id="stat-losing-trades")
+            tr
+                td #{data.tradeSim.avgWin}
+                td(id="stat-avg-win")
+            tr
+                td #{data.tradeSim.avgLoss}
+                td(id="stat-avg-loss")
+            tr
+                td #{data.tradeSim.profitFactor}
+                td(id="stat-profit-factor")
+            tr
+                td #{data.tradeSim.recFactor}
+                td(id="stat-rec-factor")
+            tr
+                td #{data.tradeSim.payoff}
+                td(id="stat-payoff")
+
+        h2 #{data.tradeSim.tradeList}
+
+        table(id="trade-list")
+            tr
+                td #{data.tradeSim.tradeType}
+                td #{data.tradeSim.entryDate}
+                td #{data.tradeSim.entryPrice}
+                td #{data.tradeSim.exitDate}
+                td #{data.tradeSim.exitPrice}
+                td #{data.tradeSim.profitLoss}
+        br
+        
+    script.
+        var tMessage = "#{JSON.stringify(data.tMessage)}".split("&quot;").join('"');
+        tMessage= JSON.parse(tMessage);
+    script(src=assetFingerprint('/scripts/processing.js'))
+    script(src=assetFingerprint('/scripts/chart.js'))
+    script(src=assetFingerprint('/scripts/filehandler.js'))
+    script(src=assetFingerprint('/scripts/terminal.js'))
+    
+    
+
+
+
+       

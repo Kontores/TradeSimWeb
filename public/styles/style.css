@@ -1,0 +1,272 @@
+body {
+    background: white;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Arial';
+    color: navy;
+}
+
+body h1 {
+    background-color: navy;
+    color: white;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Arial';
+    margin-top: 0.3em;
+    padding: 0.3em 0em 0.3em 0em;
+}
+
+body h2 {
+    margin: 0;
+    background-color: navy;
+    color: white;
+    font-size: 22px;
+    padding: 0.3em 0em 0.3em 0em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+body button {
+    min-width: 5em;
+    border: none;
+    border-radius: 0.2em;
+    color: white;
+    padding: 0.3em 0.8em;
+    font-size: 16px;
+    margin: 0em 0.2em 0.5em 0.2em;
+    text-transform: uppercase;
+}
+
+body input[type=file] {
+    width: 6em;
+    height: 1em;    
+    margin-left: -6em;
+    opacity: 0;
+}
+
+body input[type=number] {
+    width: 6em;
+    height: 1em;
+    margin: 0em 0.2em 0.5em 0.2em;
+    padding: 0.4em 0.3em;
+    background-color: black;
+    color: lime;
+    
+    font-size: 16px;
+    border: 1px solid grey;
+    border-radius: 0.2em;
+}
+
+.button-main {
+    margin-top: -7em;
+    margin-left: -3em;
+    position: absolute;
+    background-color: lightskyblue;
+    color: white;
+    font-size: 24px;
+}
+
+.button-main:hover {
+    background-color: lightgreen;
+}
+
+.button-main:active {
+    background-color: lightyellow;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.ital {
+    font-style: italic;
+    font-family: 'Arial';
+}
+
+.adwver {
+    width: 14em;
+    height: auto;
+    min-height: 20em;
+    border-radius: 0.2em;
+    position: relative;
+    float: right;
+    margin: 0.5em 0.5em;
+}
+
+.adhor {
+    width: 100%;
+    height: auto;
+    min-height: 2em;
+    max-height: 8em;
+    position: relative;
+    display: block;
+    margin: 0em;
+
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    min-height: 36em;
+    padding-bottom: 2em;
+    font-size: 16px;
+    font-family: 'Arial Black';
+    text-align: center;
+}
+
+.container p {
+    padding-left: 0.5em;
+    margin-bottom: 0.3em;
+    margin-top: 0.3em;
+}
+
+.container h2 {
+    font-family: 'Arial';
+    margin-bottom: 0.5em;
+}
+
+.container img {
+    border-radius: 0.2em;
+}
+
+.auth {
+    width: 30em;
+    height:20em;
+    position: relative;
+    margin-right: 1em;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 0.2em;
+    float: right;
+
+}
+
+#contact-form {
+    width: 32em;
+    height: 22em;
+    border-radius: 0.2em;
+    margin: auto;
+    position: relative;
+
+}
+
+#contact-form input {
+    position: relative;
+    width: 28em;
+    height: 1.5em;
+    border-radius: 0.2em;
+    border: 1px solid grey;
+    margin: 0.5em auto;
+    font-family: "Arial Black";
+    font-size: 14px;
+    padding-left: 0.5em;
+    display: block;
+}
+
+#contact-form textarea {
+    position: relative;
+    width: 28em;
+    height: 15em;
+    margin: 0.5em auto;
+    border-radius: 0.2em;
+    border: 1px solid grey;
+    font-family: "Arial Black";
+    font-size: 14px;
+    padding-left: 0.5em;
+    display: block;
+}
+
+
+#menu {
+    width: 100%;
+    height: auto;
+    min-height: 1.5em;
+    background-color: navy;
+    position: relative;
+    justify-content: center;
+    padding-top: 0.15em;
+}
+
+#menu a {
+    margin-left: 1.1em;
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 0em 0.3em 0.4em 0.3em;
+}
+
+#menu a:hover {
+    color: navy;
+    background-color:  lightcyan;
+    border-radius: 0.1em 0.1em 0em 0em;
+}
+
+.mainimg {
+    width: 100%;
+    height: auto;
+    min-height: 0.8em;
+    position: relative;
+    margin-bottom: -0.35em;
+}
+
+.mainimg img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.comment {
+    width: 23%;
+    height: auto;
+    min-height: 12em;
+    margin: 0.5em 0.5em 1.0em 0.6em;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 0.2em;
+    position: relative;
+    padding-left: 0.5em;
+    padding-bottom: 0.5em;
+    display: inline-flex;
+    overflow: hidden;
+}
+
+.comment h3 {
+    margin: 0em;
+    color: navy;
+    font-size: 16px;
+    font-family: 'Arial Black';
+    text-align: center;
+}
+
+.comment img {
+    width: 40%;
+    height: 40%;
+    position: relative;
+    margin: auto;
+    display: block;
+}
+
+#footer {
+    width: 100%;
+    height: auto;
+    min-height: 6em;
+    background-color: navy;
+    color: whitesmoke;
+    text-align: center;
+    vertical-align: bottom;
+    margin-bottom: -1em;
+    margin-top: -1em;
+    padding-top: 1em;
+}
+
+
+
+#footer hr {
+    padding-top: 1em;
+    color: whitesmoke;
+}

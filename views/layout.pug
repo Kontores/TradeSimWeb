@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        title #{pageTitle}
+        link(rel="stylesheet", href=assetFingerprint('styles/style.css'))
+        link(rel="stylesheet", href=assetFingerprint('styles/terminal.css'))
+body
+    nav(id='menu')
+     a(href="/") #{data.menu.main}
+     a(href="/sim") #{data.menu.sim}
+     a(href="/about") #{data.menu.about}
+     a(href="/tutorial") #{data.menu.tutorial}
+     a(href="/contacts") #{data.menu.contacts}
+     a(href="/ru") RU
+     a(href="/en") EN
+
+    div(class="mainimg")
+        img(src=imageSource)
+    block content
+    
+    div(class="adhor")
+    div(id="footer")
+        p Copyright © 2018, Kirill Kontorez. All rights reserved.

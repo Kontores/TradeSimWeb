@@ -1,0 +1,49 @@
+
+extends layout.pug
+
+block content
+    div(class="container")
+        a(href="/sim")
+             p(class="center-align")
+                button(class="button-main") #{data.home.start}
+        h1 #{data.home.welcomeLine}
+        div(class="comment")  
+            h3 #{data.home.h1}
+            img(src="/images/easy.svg")
+        div(class="comment")  
+            h3 #{data.home.h2} 
+            img(src="/images/candles.svg")
+        div(class="comment")  
+            h3 #{data.home.h3} 
+            img(src="/images/clock.svg")
+        div(class="comment")  
+            h3 #{data.home.h4} 
+            img(src="/images/stats.svg")
+
+        h2 #{data.home.aboutTitle}
+        p #{data.home.aboutText}
+        a(href="/about")  
+            p(class="center-align")
+                button(class="button-blue") #{data.home.learnMore}
+        h2 #{data.home.features}
+        div(class="comment") 
+            h3 #{data.home.h5} 
+            img(src="/images/terminal.svg")
+        div(class="comment") 
+            h3 #{data.home.h6} 
+            img(src="/images/orders.svg")
+        div(class="comment") 
+            h3 #{data.home.h7} 
+            img(src="/images/details.svg")
+        div(class="comment") 
+            h3 #{data.home.h8} 
+            img(src="/images/file.svg")
+        h2 #{data.home.checkTitle} 
+        p(class="center-align") #{data.home.checkText}
+        a(href="/tutorial") 
+             p(class="center-align")
+                button(class="button-blue") #{data.home.view}
+  
+
+
+       

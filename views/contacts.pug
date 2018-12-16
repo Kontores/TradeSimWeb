@@ -1,0 +1,10 @@
+extends layout.pug
+block content
+    div(class="container")
+        h1 #{data.contacts.hOne}
+        p #{data.contacts.parOne}
+        form(method="post" id="contact-form" action="/contacts")
+            input(type="text" name="email" placeholder=data.contacts.placeholderEmail required)
+            input(type="text" name="username" placeholder=data.contacts.placeholderUser required)
+            textarea(name="message" placeholder=data.contacts.placeholderMsg required)
+            button(type="submit" class="button-blue") #{data.contacts.send}

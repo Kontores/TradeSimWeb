@@ -1,0 +1,355 @@
+
+#terminal {
+    width: 100%;
+    height: auto;
+    min-height: 35em;
+    background-color: rgb(230, 230, 230);
+    position: relative;
+    padding-bottom: 1em;
+    overflow: auto;
+}
+
+#chart-label {
+    width: auto;
+    min-width: 30em;
+    height: 1.5em;
+    background-color: transparent;
+    position: absolute;
+    margin: 0.4em 0em 0em 1.5em;
+    color: lime;
+    padding: 0.1em 0em 0em 0.3em;
+    font-size: 14px;
+}
+
+.chart-cover {
+    background-color: black;
+    position: relative;
+    width: 60em;
+    height: 30em;
+    border-radius: 0.2em;
+    margin: 0.5em 0em 0em 0.5em;
+    float: left;
+
+}
+
+#chart {
+    background-color: black;
+    border-radius: 0.2em;
+    border: 1px solid darkgray;
+    float: right;
+    margin: 1.5em 0.8em 0.3em 0.3em;
+    position: relative;
+}
+
+.button-green {
+    background-color: darkgreen;
+
+}
+
+.button-green:hover {
+    background-color: lime;
+}
+
+.button-green:active {
+    background-color: greenyellow;
+}
+
+
+.button-red {
+    background-color: darkred;
+}
+
+.button-red:hover {
+    background-color: red;
+}
+
+.button-red:active {
+    background-color: orangered;
+}
+
+.button-blue {
+    background-color: navy;
+}
+
+.button-blue:hover {
+    background-color: lightskyblue;
+}
+
+.button-white {
+    background-color: white;
+    color: navy;
+    font-weight: bold;
+}
+
+.button-white:hover {
+    background-color:  lightblue;
+    color: lightcyan;
+}
+
+.button-white:active {
+    background-color: lightskyblue;
+}
+
+.switch {
+    width: 4.5em;
+    height: 1.8em;
+    position: relative;
+    display: inline-block;
+    margin-left: 0.1em;
+}
+
+.switch input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 0.2em;
+    
+}
+
+.slider:before {
+    width: 2.2em;
+    height: 1.4em;
+    content: "";
+    position: absolute;
+    left: 0.2em;
+    bottom: 0.1em;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 0.2em;
+    padding-top: 0.2em;
+}
+
+.switch input:checked + .slider {
+  background-color: green;
+}
+
+.switch input:checked + .slider:before {
+  -webkit-transform: translateX(1.9em);
+  -ms-transform: translateX(1.9em);
+  transform: translateX(1.9em);
+}
+
+.sidebar {
+    width: 15em;
+    height: 30em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    position: relative;
+    float: left;
+}
+
+.panel {
+    width: auto;
+    height: auto;
+    min-width: 13em;
+    min-height: 4em;
+    border: 1px solid grey;
+    border-radius: 0.2em;
+    position: relative;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    padding: 0.2em 0.5em 0.5em 0.5em;
+    float: left;
+    color: navy;
+    font-weight: bold;
+}
+
+.panel p {
+    margin: 0.2em 0em 0.3em 0em;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.panel input[type="text"] {
+    width: 3em;
+    background-color: black;
+    color: lime;
+
+    font-size: 16px;
+    border: 1px solid grey;
+    border-radius: 0.2em;
+
+}
+
+.panel select {
+    width: 3em;
+    background-color: black;
+    color: lime;
+
+    font-size: 16px;
+    border: 1px solid grey;
+    border-radius: 0.2em;
+}
+
+.panel h3 {
+    font-size: 16px;
+    color: navy;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.panel label {
+    font-size: 16px;
+    color: navy;
+    display: block;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.panel input[type=range] {
+    -webkit-appearance: none;
+    width: 95%;
+    min-width: 18em;
+    background-color: transparent;
+}
+
+.panel input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: navy;
+    width: 0.6em;
+    height: 2em;
+    border-radius: 0.2em;
+    margin-top: -0.8em;
+}
+
+.panel input[type=range]::-moz-range-thumb {
+    background: navy;
+    width: 0.6em;
+    height: 2em;
+    border-radius: 0.2em;
+}
+
+.panel input[type=range]::-ms-thumb {
+    background: navy;
+    width: 0.6em;
+    height: 2em;
+    border-radius: 0.2em;
+}
+
+.panel input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.3em;
+    background-color: darkgray;
+    margin-top: 1em;
+    border-radius: 0.2em;
+}
+
+.panel input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 0.3em;
+    background-color: darkgray;
+    margin-top: 1em;
+    border-radius: 0.2em;
+}
+    
+.panel input[type=range]::-ms-track {
+    width: 100%;
+    height: 0.3em;
+    background-color: darkgray;
+    margin-top: 1em;
+    border-radius: 0.2em;
+}
+
+.panel table {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.panel-black {  
+    width: 12em;
+    height: auto;
+    min-height: 4em;
+    border: 1px solid grey;
+    border-radius: 0.2em;
+    position: relative;
+    margin-top: 0.5em;
+    margin-left: 0em;
+    padding: 0.2em 0.5em 0.5em 0.5em;
+    float: left;
+    background-color: black;
+    color: grey;
+}
+
+#scrlInterval {
+    margin: 0.5em 0.5em;
+    display: block;
+}
+
+.performance-label {
+    color: lightgray;
+}
+
+#cancel-order {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#trade-results {
+    width: 100%;
+    height: auto;
+    min-height: 32em;
+    background-color: rgb(230, 230, 230);
+    position: relative;
+    margin-top: -1em;
+    text-transform: uppercase;
+}
+
+#trade-results p {
+    padding-left: 2em;
+}
+
+#trade-results h3 {
+    padding-left: 2em;
+}
+
+
+#trade-results table {
+    border-radius: 0.2em;
+    border-spacing: 0em;
+    float: bottom;
+    background-color: white;
+}
+
+
+#trade-results table td {
+    min-width: 8em;
+    border: 0.02em solid lightgray;
+    margin: 0;
+    padding: 0.2em;
+}
+
+.performance {
+    margin: 2em 2em;
+}
+
+#trade-list {
+    width: 75%;
+    margin: 2em auto;
+}
+
+#equity-chart {
+    background: #3251ff; 
+    background: -moz-linear-gradient(top, #3251ff 0%, #200096 100%); 
+    background: -webkit-linear-gradient(top, #3251ff 0%,#200096 100%); 
+    background: linear-gradient(to bottom, #3251ff 0%,#200096 100%); 
+    border-radius: 0.2em;
+    border: 1px solid darkgray;
+    margin: 1.5em 0.8em 0.3em 0.3em;
+    position: relative;
+    float: right;
+}
