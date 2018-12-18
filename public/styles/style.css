@@ -102,8 +102,8 @@ body input[type=number] {
 .adhor {
     width: 100%;
     height: auto;
-    min-height: 2em;
-    max-height: 8em;
+    min-height: 4em;
+    max-height: 24em;
     position: relative;
     display: block;
     margin: 0em;
