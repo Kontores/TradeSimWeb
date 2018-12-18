@@ -28,8 +28,8 @@ block content
             button(class="button-white") #{data.tradeSim.selectFile}
                 input(type="file", label="Select" id="selectFile")
             button(class="button-white" onclick="terminal.start(document.getElementById('selectFile'))") #{data.tradeSim.load} 
-            span #{data.tradeSim.or}
-            button(class="button-white" onclick="terminal.start(null, true)") #{data.tradeSim.useRandom}
+            p #{data.tradeSim.or}
+                button(class="button-white" onclick="terminal.start(null, true)") #{data.tradeSim.useRandom}
             table
                 tr
                     td #{data.tradeSim.separator}: 
@@ -122,21 +122,8 @@ block content
                             option(value="4") 5
                             option(value="5") 6
                             option(value="6" selected) 7
-                            option(value="7") 8
-            
-        div(class="panel" id="panel-chart")
-            h3 #{data.tradeSim.chart}
-            button(class="button-blue" onclick="terminal.switchNext()") #{data.tradeSim.next} 
-            button(class="button-blue" onclick="terminal.zoomIn()") +
-            button(class="button-blue" onclick="terminal.zoomOut()") -
-            br
-            h3 #{data.tradeSim.autoscroll}
-            label(class="switch")
-                input(type="checkbox" onclick="terminal.setAutoScroll()")
-                span(class="slider")
-            
-            label(for="scrlInterval") #{data.tradeSim.scrollSpeed}
-            input(id="scrlInterval" type="range" min="1" max="995" step="1" oninput="terminal.setScrlSpeed(document.getElementById('scrlInterval').value)")
+                            option(value="7") 8  
+
 
         div(class="panel" id="panel-trading")
             h3 #{data.tradeSim.trading}
@@ -152,8 +139,46 @@ block content
             button(class="button-blue" onclick="terminal.clearOrder('take-profit')") #{data.tradeSim.clear}
             input(id="take-profit" type="number" placeholder="Take Profit") 
             button(class="button-white" onclick="terminal.setLimit(document.getElementById('take-profit').value)") #{data.tradeSim.set} 
+        
+
+        div(class="panel" id="panel-chart")
+            h3 #{data.tradeSim.chart}
+            button(class="button-blue" onclick="terminal.switchNext()") #{data.tradeSim.next} 
+            button(class="button-blue" onclick="terminal.zoomIn()") +
+            button(class="button-blue" onclick="terminal.zoomOut()") -
+            br
+            h3 #{data.tradeSim.autoscroll}
+            label(class="switch")
+                input(type="checkbox" onclick="terminal.setAutoScroll()")
+                span(class="slider") 
+            label(for="scrlInterval") #{data.tradeSim.scrollSpeed}
+            input(id="scrlInterval" type="range" min="1" max="995" step="1" oninput="terminal.setScrlSpeed(document.getElementById('scrlInterval').value)")
+
+
+           
+
+        
     div(id="trade-results")
         div(class="adhor")
+            <!-- Yandex.RTB R-A-337737-1 -->
+            div(id="yandex_rtb_R-A-337737-1")
+                script.
+                    (function(w, d, n, s, t) {
+                        w[n] = w[n] || [];
+                        w[n].push(function() {
+                            Ya.Context.AdvManager.render({
+                                blockId: "R-A-337737-1",
+                                renderTo: "yandex_rtb_R-A-337737-1",
+                                async: true
+                            });
+                        });
+                        t = d.getElementsByTagName("script")[0];
+                        s = d.createElement("script");
+                        s.type = "text/javascript";
+                        s.src = "//an.yandex.ru/system/context.js";
+                        s.async = true;
+                        t.parentNode.insertBefore(s, t);
+                    })(this, this.document, "yandexContextAsyncCallbacks");
         h2 #{data.tradeSim.results}
         canvas(id="equity-chart" width="800" height="400")
         h3 #{data.tradeSim.performance}
