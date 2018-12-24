@@ -153,15 +153,8 @@ block content
                 span(class="slider") 
             label(for="scrlInterval") #{data.tradeSim.scrollSpeed}
             input(id="scrlInterval" type="range" min="1" max="995" step="1" oninput="terminal.setScrlSpeed(document.getElementById('scrlInterval').value)")
-
-
-           
-
-        
-    div(id="trade-results")
-        div(class="adhor")
-            <!-- Yandex.RTB R-A-337737-1 -->
-            div(id="yandex_rtb_R-A-337737-1")                
+         
+    div(id="trade-results")               
         h2 #{data.tradeSim.results}
         canvas(id="equity-chart" width="800" height="400")
         h3 #{data.tradeSim.performance}
@@ -214,6 +207,9 @@ block content
                 td #{data.tradeSim.exitPrice}
                 td #{data.tradeSim.profitLoss}
         br
+        div(class="adhor")
+            <!-- Yandex.RTB R-A-337737-1 -->
+            div(id="yandex_rtb_R-A-337737-1") 
         
     script.
         var tMessage = "#{JSON.stringify(data.tMessage)}".split("&quot;").join('"');

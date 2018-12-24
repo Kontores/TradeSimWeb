@@ -158,8 +158,7 @@
     border: 1px solid grey;
     border-radius: 0.2em;
     position: relative;
-    margin-top: 0.5em;
-    margin-left: 0.5em;
+    margin: 0.5em 0em 0.5em 0.5em;
     padding: 0.2em 0.5em 0.5em 0.5em;
     float: left;
     color: navy;
